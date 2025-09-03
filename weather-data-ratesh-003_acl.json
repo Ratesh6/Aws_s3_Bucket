@@ -1,0 +1,30 @@
+{
+    "ResponseMetadata": {
+        "RequestId": "W6KMQFNZYN2E1AAN",
+        "HostId": "OmG94UQQkbwtkfecHZB+uGTrBIjpgryYzl8tvJf8bXuIF2JyIzfOEK18DR6Pi5TNuqGOqXz854axl1YDlik5ByLWUKaRkqsw",
+        "HTTPStatusCode": 200,
+        "HTTPHeaders": {
+            "x-amz-id-2": "OmG94UQQkbwtkfecHZB+uGTrBIjpgryYzl8tvJf8bXuIF2JyIzfOEK18DR6Pi5TNuqGOqXz854axl1YDlik5ByLWUKaRkqsw",
+            "x-amz-request-id": "W6KMQFNZYN2E1AAN",
+            "date": "Wed, 03 Sep 2025 06:43:08 GMT",
+            "content-type": "application/xml",
+            "transfer-encoding": "chunked",
+            "server": "AmazonS3"
+        },
+        "RetryAttempts": 0
+    },
+    "Owner": {
+        "DisplayName": "rateshkj",
+        "ID": "1ab660c6dca136067b32b1352b7d8589b597f1d840e74df58bc863dcfa71aaba"
+    },
+    "Grants": [
+        {
+            "Grantee": {
+                "DisplayName": "rateshkj",
+                "ID": "1ab660c6dca136067b32b1352b7d8589b597f1d840e74df58bc863dcfa71aaba",
+                "Type": "CanonicalUser"
+            },
+            "Permission": "FULL_CONTROL"
+        }
+    ]
+}
