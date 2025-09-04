@@ -72,7 +72,7 @@ On first run:
 
 A new bucket will be created with the naming convention:
 
-weather-data-ratesh-001
+weather-data-ratesh-003
 
 
 Weather JSON will be uploaded.
