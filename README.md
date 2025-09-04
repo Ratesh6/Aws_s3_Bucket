@@ -1,31 +1,28 @@
 Weather Data → S3 Ingestion Script
-**** Overview****
+This project fetches current weather data from the OpenWeatherMap API and stores it in an Amazon S3 bucket. The script is idempotent – it creates the bucket if not present, or reuses it otherwise. Each run uploads a new timestamped JSON file.
 
-This project fetches current weather data from the OpenWeatherMap API
- and stores it in an Amazon S3 bucket.
-The script is idempotent:
+ Features
 
-If the S3 bucket exists → it reuses it.
+Automatic S3 bucket creation with:
 
-If not → it creates it automatically with encryption enabled and public access blocked.
+Blocked Public Access
 
-Each run generates a new timestamped JSON file uploaded to the S3 bucket.
- **Features**
+Default Server-Side Encryption (SSE-S3)
 
-Automated bucket creation with proper configuration:
+Timestamped JSON uploads for each execution
 
-Block Public Access
+Retry mechanism for transient API/network errors
 
-Default Encryption (SSE-S3)
+No hardcoded secrets → uses environment variables
 
-Timestamped JSON uploads for each execution.
-** Prerequisites**
-1. Install Dependencies
+🛠️ Prerequisites
+
+Install dependencies:
+
 pip install boto3 requests python-dotenv
 
-2. AWS Setup
 
-Configure your AWS CLI:
+Configure AWS CLI:
 
 aws configure
 
@@ -36,17 +33,17 @@ AWS Access Key ID
 
 AWS Secret Access Key
 
-Default region name (e.g., us-east-1)
+Default region (e.g., us-east-1)
 
-Output format (json recommended)
+Output format (json)
 
-Test your configuration:
+Verify AWS setup:
 
 aws sts get-caller-identity
 aws s3 ls
 
 
-Ensure your IAM user has these permissions:
+Required IAM permissions:
 
 s3:CreateBucket
 
@@ -58,35 +55,22 @@ s3:ListBucket
 
 s3:PutObject
 
-Retry mechanism for transient API/network errors.
-
-No hardcoding of credentials or API keys (uses environment variables).
-**Usage**
+ Usage
 
 Run the script:
 
 python weather_ingest.py
 
 
-On first run:
+First Run → Creates bucket weather-data-<yourname> and uploads JSON.
 
-A new bucket will be created with the naming convention:
+Subsequent Runs → Reuses bucket and adds new timestamped JSON files.
 
-weather-data-ratesh-003
+Deliverables
 
+weather.py → Python script
 
-Weather JSON will be uploaded.
+README.md → Documentation
 
-On subsequent runs:
+S3 bucket screenshots/listings with multiple JSON uploads
 
-Bucket is reused.
-
-New JSON files are added.
-
- **Deliverables**
-
-Python Script: weather.py
-
-README.md: (this file)
-
-S3 Bucket Screenshot/Listing showing multiple JSON uploads.
