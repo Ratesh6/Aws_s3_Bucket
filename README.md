@@ -1,7 +1,8 @@
-Weather Data → S3 Ingestion Script
+**Weather Data → S3 Ingestion Script**
+
 This project fetches current weather data from the OpenWeatherMap API and stores it in an Amazon S3 bucket. The script is idempotent – it creates the bucket if not present, or reuses it otherwise. Each run uploads a new timestamped JSON file.
 
- Features
+** Features**
 
 Automatic S3 bucket creation with:
 
@@ -15,7 +16,7 @@ Retry mechanism for transient API/network errors
 
 No hardcoded secrets → uses environment variables
 
-🛠️ Prerequisites
+** Prerequisites**
 
 Install dependencies:
 
@@ -55,7 +56,7 @@ s3:ListBucket
 
 s3:PutObject
 
- Usage
+** Usage**
 
 Run the script:
 
@@ -66,7 +67,7 @@ First Run → Creates bucket weather-data-<yourname> and uploads JSON.
 
 Subsequent Runs → Reuses bucket and adds new timestamped JSON files.
 
-Deliverables
+**Deliverables**
 
 weather.py → Python script
 
