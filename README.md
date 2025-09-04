@@ -82,6 +82,7 @@ On subsequent runs:
 Bucket is reused.
 
 New JSON files are added.
+
  **Deliverables**
 
 Python Script: weather.py
